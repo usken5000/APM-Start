@@ -9,11 +9,19 @@
             *ngIf='products.length'
             >
         <thead>
-            <tr><th>Filtered by: </th> <th><input></th></tr>
+            <tr><th><div>Filter by: </div> <input type="text" 
+              [(ngModel)] ='listFilter' 
+              /></th></tr>
+              <tr>
+                <th>
+                  Filtered by {{listFilter}}
+                </th>
+              </tr>
           <tr>
             <th>           
-              <button class='btn btn-primary'>
-                      Showimage
+              <button class='btn btn-primary'
+              (click)='toggleImage()'>
+                      {{showImage ? 'Hide': 'Show'}} Image
               </button>
             </th>
             <th>Product</th>
@@ -27,11 +35,15 @@
         <tbody>
             
               <tr *ngFor='let product of products'>
-                <td></td>
+                <td><img [src]='product.imageUrl'
+                  [title]='product.productName'
+                  [style.width.px]='imageWidth'
+                  [style.margin.px]='imageMargin'
+                  *ngIf='showImage'></td>
                 <td>{{ product.productName }}</td>
-                <td>{{ product.productCode }}</td>
+                <td>{{ product.productCode | lowercase }}</td>
                 <td>{{ product.releaseDate }}</td>
-                <td>{{ product.price }}</td>
+                <td>{{ product.price | currency : 'USD' : 'symbol' : '1.2-2'}}</td>
                 <td>{{ product.starRating }}</td>
             </tr>
         
