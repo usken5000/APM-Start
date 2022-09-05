@@ -7,17 +7,7 @@ import { Component } from "@angular/core";
 export class ProductList {
     pageTitle: string = 'Product';
     products: any[] = [
-        {
-            "productId": 2,
-            "productName": "Garden Cart",
-            "productCode": "GDW-2140",
-            "releaseDate": "March 18, 1998",
-            "description": "A cart with 18 galons of capablidity",
-            "price": 31,
-            "starRating": 4.1,
-            "imageUrl": "assets/images/garden_cart.png"
-
-        },
+        
         {
           "productId": 5,
           "productName": "Hammer",
