@@ -50,14 +50,14 @@ export class ProductList implements OnInit {
     }
     ngOnInit(): void {
       console.log('In OnInit');
-      this.shit();
+      this.startup();
     }
-    shit(): void {
+    startup(): void {
       if (this.showImage) {
         console.log('tråd'); 
       }
       if (!this.showImage) {
-        console.log('fart')
+        console.log('Show Image')
       }
     }
 };
